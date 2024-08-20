@@ -1,0 +1,26 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Contactos extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'nombre',
+        'apellidos',
+        'ciudad',
+        'email',
+        'telefono',
+        'fechaDeNacimiento',
+        'imagen'
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+}
